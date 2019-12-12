@@ -72,7 +72,7 @@ public class ToDoController {
     return ResponseEntity.created(location).build();
   }
 
-  @DeleteMapping("/todo")
+  @DeleteMapping("/todo/{id}")
   public ResponseEntity<ToDo> deleteToDo(@PathVariable String id) {
     repository.delete(ToDoBuilder.create().withId(id).build());
     return ResponseEntity.noContent().build();
